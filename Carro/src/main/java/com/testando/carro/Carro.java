@@ -27,7 +27,7 @@ public class Carro {
         sistemaEletrico.ativarParteEletrica();
 
         // Exibir o status no painel
-        String status = painel.exibirStatus();
+        String status = painel.getDisplay();
         System.out.println("Status do painel:\n" + status);
 
         // Acelerar o carro
