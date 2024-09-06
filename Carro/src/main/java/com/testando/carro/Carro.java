@@ -19,7 +19,7 @@ public class Carro {
         Motor motor = new Motor();
         Transmissao transmissao = new Transmissao();
         SistemaEletrico sistemaEletrico = new SistemaEletrico();
-        Painel painel = new Painel();
+        Painel painel = new Painel("Eletronico", "ligado", "Toshiba", false, false);
 
         // Realizar as ações de ligar o motor, ativar a transmissão e o sistema elétrico
         motor.ligarMotor();
