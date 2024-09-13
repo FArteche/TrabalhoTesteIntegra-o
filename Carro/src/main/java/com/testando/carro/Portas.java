@@ -4,6 +4,7 @@
  */
 package com.testando.carro;
 
+// Métodos de integração(abrir/fechar) //
 /**
  *
  * @author IFSul
@@ -11,23 +12,25 @@ package com.testando.carro;
 public class Portas {
     private int quantidade;
     private String material, cor, tipo, estado;
-    
-    public Portas(int quantidade, String material, String cor, String tipo, String estado){
+
+    public Portas(int quantidade, String material, String cor, String tipo, String estado) {
         this.cor = cor;
         this.estado = estado;
         this.material = material;
         this.quantidade = quantidade;
         this.tipo = tipo;
     }
-    
-    public void abrir(){
+
+    public void abrir(Luzes luz, SistemaEletrico eletrico) {
         estado = "aberto";
+        luz.Ligar(eletrico);
     }
-    
-    public void fechar(){
+
+    public void fechar(Luzes luz) {
         estado = "fechado";
+        luz.Desligar();
     }
-    
+
     public int getQuantidade() {
         return quantidade;
     }

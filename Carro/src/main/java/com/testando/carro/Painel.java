@@ -11,20 +11,23 @@ package com.testando.carro;
 public class Painel {
 
     private String tipo, display, marca;
-    private boolean controle/*Verifica se todos os componentes estão funcionando(motor ligado, painel ligado, etc*/, estado;
-    
-    public Painel(String tipo, String display, String marca, boolean controle, boolean estado){
+    private boolean controle/*
+                             * Verifica se todos os componentes estão funcionando(motor ligado, painel
+                             * ligado, etc
+                             */, estado;
+
+    public Painel(String tipo, String display, String marca, boolean controle, boolean estado) {
         this.tipo = tipo;
         this.display = display;
         this.estado = estado;
         this.marca = marca;
         this.tipo = tipo;
     }
-    
-    public void atualizarInformações(String info){
+
+    public void atualizarInformações(String info) {
         this.display = info;
     }
-    
+
     public void ligarDisplay() {
         if (estado) {
             System.out.println("Display já está ligado");
@@ -50,7 +53,7 @@ public class Painel {
     }
 
     public String getDisplay() {
-        if(!estado){
+        if (!estado) {
             return "Display desligado";
         }
         return display;

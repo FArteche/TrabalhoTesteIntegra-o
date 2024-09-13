@@ -11,24 +11,24 @@ package com.testando.carro;
 public class Pneus {
     private String tamanho, tipo, marca, estado;
     private double pressao;
-    
-    public Pneus(String tamanho, String tipo, String marca, String estado, double pressao){
+
+    public Pneus(String tamanho, String tipo, String marca, String estado, double pressao) {
         this.tamanho = tamanho;
         this.tipo = tipo;
         this.marca = marca;
         this.estado = estado;
         this.pressao = pressao;
     }
-    
-    public double verificarPressao(){
+
+    public double verificarPressao() {
         return pressao;
     }
-    
-    public void ajustarPressao(double novaPressao){
+
+    public void ajustarPressao(double novaPressao) {
         pressao = novaPressao;
     }
-    
-    public void substituirPneu(String tamanho, String tipo, String marca, String estado, double pressao){
+
+    public void substituirPneu(String tamanho, String tipo, String marca, String estado, double pressao) {
         this.tamanho = tamanho;
         this.tipo = tipo;
         this.marca = marca;

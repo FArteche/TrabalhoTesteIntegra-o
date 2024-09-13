@@ -1,5 +1,6 @@
 package com.testando.carro;
 
+//
 /**
  *
  * @author IFSul
@@ -19,11 +20,11 @@ public class Suspensao {
         this.estado = estado;
     }
 
-    public boolean verificarEstado(){
+    public boolean verificarEstado() {
         return estado;
     }
-    
-    public void substituir(String tipo, String material, String marca, double altura, int rigidez, boolean estado){
+
+    public void substituir(String tipo, String material, String marca, double altura, int rigidez, boolean estado) {
         this.tipo = tipo;
         this.material = material;
         this.marca = marca;
@@ -35,7 +36,7 @@ public class Suspensao {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
-    
+
     public String getTipo() {
         return tipo;
     }
@@ -75,6 +76,5 @@ public class Suspensao {
     public void setRigidez(int rigidez) {
         this.rigidez = rigidez;
     }
-    
-    
+
 }

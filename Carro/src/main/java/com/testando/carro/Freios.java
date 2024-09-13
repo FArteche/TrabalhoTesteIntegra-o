@@ -1,6 +1,6 @@
 package com.testando.carro;
 
-public class Freios{
+public class Freios {
     private String tipo, material, marca;
     private double tamanho, nivelDeDesgaste;
 
@@ -11,18 +11,18 @@ public class Freios{
         this.tamanho = tamanho;
         this.nivelDeDesgaste = nivelDeDesgaste;
     }
-    
-    public void substituirPastilha(){
+
+    public void substituirPastilha() {
         nivelDeDesgaste = 0.0;
     }
-    
-    public void ajustarFreio(String tipo, String material, String marca, double tamanho){
+
+    public void ajustarFreio(String tipo, String material, String marca, double tamanho) {
         this.tipo = tipo;
         this.material = material;
         this.marca = marca;
         this.tamanho = tamanho;
     }
-    
+
     public String getTipo() {
         return tipo;
     }
@@ -62,6 +62,5 @@ public class Freios{
     public void setNivelDeDesgaste(double nivelDeDesgaste) {
         this.nivelDeDesgaste = nivelDeDesgaste;
     }
-    
-    
+
 }

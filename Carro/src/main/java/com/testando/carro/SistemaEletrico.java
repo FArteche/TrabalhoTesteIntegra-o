@@ -4,6 +4,7 @@
  */
 package com.testando.carro;
 
+//
 /**
  *
  * @author Abner
@@ -38,7 +39,14 @@ public class SistemaEletrico {
     }
 
     public void testarSistema() {
-        // TODO
+        if (estado == true) {
+            if (voltagem > 100 && voltagem < 150) {
+            } else {
+            }
+        } else {
+
+        }
+
     }
 
     public void ativarParteEletrica() {

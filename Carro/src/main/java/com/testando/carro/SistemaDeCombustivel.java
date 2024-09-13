@@ -1,5 +1,6 @@
 package com.testando.carro;
 
+// integração(PainelAtualizações/?) //
 public class SistemaDeCombustivel {
     private String tipoDeCombustivel;
     private double capacidade;
@@ -16,15 +17,15 @@ public class SistemaDeCombustivel {
         this.estado = estado;
     }
 
-    public void verificarNivel() {
+    public void verificarNivel(Painel painel) {
         if (nivelDeCombustivel == 0) {
-            System.out.println("Carro sem gasolina.");
+            painel.atualizarInformações("Carro sem gasolina.");
         } else if (nivelDeCombustivel > 0 && nivelDeCombustivel <= 3) {
-            System.out.println("Nível do combustivel baixo.");
+            painel.atualizarInformações("Nível do combustivel baixo.");
         } else if (nivelDeCombustivel > 3 && nivelDeCombustivel <= 10) {
-            System.out.println("Nível do combustivel médio");
+            painel.atualizarInformações("Nível do combustivel médio");
         } else if (nivelDeCombustivel > 10) {
-            System.out.println("Nível do combustivel Alto");
+            painel.atualizarInformações("Nível do combustivel Alto");
         }
     }
 

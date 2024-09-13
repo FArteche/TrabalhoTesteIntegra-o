@@ -1,5 +1,6 @@
 package com.testando.carro;
 
+//
 public class Luzes {
     private String tipo;
     private int intensidade;
@@ -15,12 +16,16 @@ public class Luzes {
         this.modelo = modelo;
     }
 
-    public void Ligar() {
-        if (estado == true) {
-            System.out.println("Luzes já estão ligadas");
-        } else if (estado == false) {
-            estado = true;
-            System.out.println("Luzes Ligada");
+    public void Ligar(SistemaEletrico eletrico) {
+        if (eletrico.verificarBateria() == false) {
+            System.out.println("Sistema elétrico falhando.");
+        } else {
+            if (estado == true) {
+                System.out.println("Luzes já estão ligadas");
+            } else {
+                estado = true;
+                System.out.println("Luzes Ligada");
+            }
         }
     }
 
