@@ -1,5 +1,6 @@
 package com.testando.carro;
-
+//frear adicionado (aumenta o desgaste e aciona a luz de freio)
+//avisoDesgaste (Mostra mensagem no painel se o desgaste dos freios é alto)
 public class Freios {
     private String tipo, material, marca;
     private double tamanho, nivelDeDesgaste;
@@ -10,6 +11,17 @@ public class Freios {
         this.marca = marca;
         this.tamanho = tamanho;
         this.nivelDeDesgaste = nivelDeDesgaste;
+    }
+
+    public void frear(Luzes luz, SistemaEletrico eletrico){
+        nivelDeDesgaste += 0.01;
+        luz.Ligar(eletrico);
+    }
+
+    public void avisoDesgaste(Painel painel){
+        if(nivelDeDesgaste >= 10.00){
+            painel.atualizarInformações("Freios desgastados, realize a manutenção");
+        }
     }
 
     public void substituirPastilha() {

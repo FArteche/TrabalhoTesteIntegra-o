@@ -1,6 +1,7 @@
 
 package com.testando.carro;
-
+//trocaRe (Troca a marcha para ré e acende a luz de ré)
+//trocarMarcha (Agora mostra a marcha atual no display)
 public class SistemadeTransmissao {
     private String tipo;
     private int numeroDeMarchas;
@@ -16,12 +17,17 @@ public class SistemadeTransmissao {
         this.estado = estado;
     }
 
-    public void trocarMarcha(int marcha) {
+    public void trocarRe(int marcha, Luzes luz,SistemaEletrico eletrico){
+        marcha = -1;
+        luz.Ligar(eletrico);
+    }
+
+    public void trocarMarcha(int marcha,Painel painel) {
         if (marcha < numeroDeMarchas) {
             marcha++;
-            System.out.println("Marcha aumentada para " + marcha);
+            painel.atualizarInformações("Marcha " + marcha);
         } else {
-            System.out.println("Não é possível aumentar mais!");
+            painel.atualizarInformações("Não é possível aumentar mais!");
         }
     }
 

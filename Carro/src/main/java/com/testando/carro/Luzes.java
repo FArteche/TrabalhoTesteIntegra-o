@@ -1,6 +1,7 @@
 package com.testando.carro;
 
-//
+//Ligar(Usa sistema elétrico)
+//AjustarIntensidade (Agora avisa no painel a intensidade que está sendo utilizada)
 public class Luzes {
     private String tipo;
     private int intensidade;
@@ -38,8 +39,16 @@ public class Luzes {
         }
     }
 
-    public void AjustarIntensidade(int novaIntensidade) {
+    // 0 = luz de posição. 1 = luz baixa, 2 = luz alta
+    public void AjustarIntensidade(int novaIntensidade, Painel painel) {
         this.intensidade = novaIntensidade;
+        if (intensidade == 1) {
+            painel.atualizarInformações("Luz baixa ligada");
+        } else if (intensidade == 2) {
+            painel.atualizarInformações("Luz alta ligada");
+        } else {
+            painel.atualizarInformações("Luz de posição ligada");
+        }
     }
 
     public String getTipo() {

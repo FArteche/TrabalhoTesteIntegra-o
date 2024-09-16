@@ -1,5 +1,6 @@
 package com.testando.carro;
-
+//ajustarEncosto e ajustarAltura foram alterados para atualizar o painel
+//toda vez que forem alterados
 public class Bancos {
 
     private int quantidade;
@@ -18,12 +19,14 @@ public class Bancos {
         this.altura = altura;
     }
 
-    public void ajustarEncosto(String posicao) {
+    public void ajustarEncosto(String posicao, Painel painel) {
         this.estado = posicao;
+        painel.atualizarInformações("Posicao do banco ajustada para ");
     }
 
-    public void ajustarAltura(double novaAltura) {
+    public void ajustarAltura(double novaAltura, Painel painel) {
         this.altura = novaAltura;
+        painel.atualizarInformações("Altura do banco ajustada para "+novaAltura);
     }
 
     public void verificarEstado() {

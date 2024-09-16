@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package com.testando.carro;
-
+//ligarDisplay (verifica se o sistema elétrico está funcionando antes de ligar)
+//setControle (Verifica Motor, SistemaEletrico, SistemaDeCombustivel, SistemaDeDirecao, SistemadeTransmissao e retorna true se tudo estiver funcionando)
 /**
  *
  * @author Abner
@@ -28,11 +29,13 @@ public class Painel {
         this.display = info;
     }
 
-    public void ligarDisplay() {
+    public void ligarDisplay(SistemaEletrico eletrico) {
         if (estado) {
             System.out.println("Display já está ligado");
         } else {
-            estado = true;
+            if (eletrico.verificarBateria()){
+                estado = true;                
+            }
         }
     }
 
@@ -75,8 +78,13 @@ public class Painel {
         return controle;
     }
 
-    public void setControle(boolean controle) {
-        this.controle = controle;
+    public void setControle(Motor motor, SistemaEletrico eletrico, SistemaDeCombustivel combustivel, SistemaDeDirecao direcao, SistemadeTransmissao transmissao) {
+        if (motor.verificarEstado() && eletrico.verificarBateria() && combustivel.getNivelDeCombustivel()>0 && direcao.getEstado() && transmissao.verificarEstado() && estado) {
+            controle = true;
+            setDisplay("Componentes principais estão funcionando corretamente");
+        }else{
+            controle = false;
+        }
     }
 
     public boolean isEstado() {
