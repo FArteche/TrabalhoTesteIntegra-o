@@ -4,7 +4,8 @@
  */
 package com.testando.carro;
 
-//
+//testarSistema(Se está tudo ok, mostra no painel)
+//substituirBateria(Motor precisa estar desligado)
 /**
  *
  * @author Abner
@@ -30,27 +31,30 @@ public class SistemaEletrico {
     }
 
     public void substituirBateria(double voltagem, double capacidade, String tipoDeBateria, boolean estado,
-            String marca) {
-        this.voltagem = voltagem;
-        this.capacidade = capacidade;
-        this.tipoDeBateria = tipoDeBateria;
-        this.estado = estado;
-        this.marca = marca;
+            String marca, Motor motor) {
+        if (!motor.verificarEstado()) {
+            this.voltagem = voltagem;
+            this.capacidade = capacidade;
+            this.tipoDeBateria = tipoDeBateria;
+            this.estado = estado;
+            this.marca = marca;
+        }
     }
 
-    public void testarSistema() {
-        if (estado == true) {
-            if (voltagem > 100 && voltagem < 150) {
-            } else {
-            }
-        } else {
-
+    public boolean testarSistema(Painel painel) {
+        if (voltagem >= 13 && voltagem <= 15 && estado) {
+            painel.atualizarInformações("Sistema elétrico funcional");
+            return true;
         }
-
+        return false;
     }
 
     public void ativarParteEletrica() {
-        System.out.println("Sistema eletrico ativado.");
+        if (!estado) {
+            estado = true;
+        } else {
+            estado = false;
+        }
     }
 
     public double getVoltagem() {

@@ -1,6 +1,6 @@
 package com.testando.carro;
 
-// integração(PainelAtualizações/?) //
+// integração(PainelAtualizações/Abastecer) //
 public class SistemaDeCombustivel {
     private String tipoDeCombustivel;
     private double capacidade;
@@ -29,8 +29,10 @@ public class SistemaDeCombustivel {
         }
     }
 
-    public void Abastecer(double quantidade) {
-        this.nivelDeCombustivel = quantidade;
+    public void Abastecer(double quantidade, Motor motor) {
+        if (!motor.verificarEstado()) {
+            this.nivelDeCombustivel = quantidade;
+        }
     }
 
     public void SubstituirTanque(double alterarCapacidade) {

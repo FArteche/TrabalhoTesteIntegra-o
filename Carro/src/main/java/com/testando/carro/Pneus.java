@@ -4,24 +4,38 @@
  */
 package com.testando.carro;
 
+//desgastePneu (usa a rigidez da suspensao para aplicar o desgaste)
+//verificarPressao (mostra a pressao atual do pneu no painel)
 /**
  *
  * @author IFSul
  */
 public class Pneus {
     private String tamanho, tipo, marca, estado;
-    private double pressao;
+    private double pressao, desgaste;
+    private boolean removido;
 
-    public Pneus(String tamanho, String tipo, String marca, String estado, double pressao) {
+    public Pneus(String tamanho, String tipo, String marca, String estado, double pressao, double desgaste) {
         this.tamanho = tamanho;
         this.tipo = tipo;
         this.marca = marca;
         this.estado = estado;
         this.pressao = pressao;
+        this.desgaste = desgaste;
     }
 
-    public double verificarPressao() {
-        return pressao;
+    public void desgastePneu(Suspensao suspensao) {
+        if (suspensao.getRigidez() <= 1500) {
+            desgaste += 1.5;
+        } else if (suspensao.getRigidez() <= 500) {
+            suspensao.setEstado(false);
+        } else {
+            desgaste += 4.0;
+        }
+    }
+
+    public void verificarPressao(Painel painel) {
+        painel.atualizarInformações("Pressão atual: " + pressao);
     }
 
     public void ajustarPressao(double novaPressao) {
@@ -34,6 +48,22 @@ public class Pneus {
         this.marca = marca;
         this.estado = estado;
         this.pressao = pressao;
+    }
+
+    public boolean isRemovido() {
+        return removido;
+    }
+
+    public void setRemovido(boolean removido) {
+        this.removido = removido;
+    }
+
+    public double getDesgaste() {
+        return desgaste;
+    }
+
+    public void setDesgaste(double desgaste) {
+        this.desgaste = desgaste;
     }
 
     public String getTamanho() {

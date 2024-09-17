@@ -24,9 +24,20 @@ public class Motor {
         this.estado = estado;
     }
 
-    public void ligarMotor() {
-        System.out.println("Motor ligado");
-        estado = true;
+    public void mostrarEspecificações(Painel painel) {
+        painel.atualizarInformações(
+                "Tipo: " + tipo
+                        + "\nPotencia: " + potencia
+                        + "\nCilindradas: " + cilindrada
+                        + "\nmarca: " + marca);
+    }
+
+    public void ligarMotor(SistemaEletrico eletrico) {
+        if (eletrico.isEstado()) {
+            estado = true;
+        } else {
+            estado = false;
+        }
     }
 
     public void desligarMotor() {
