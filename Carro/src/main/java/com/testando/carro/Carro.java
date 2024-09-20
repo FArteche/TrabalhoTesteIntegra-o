@@ -9,6 +9,7 @@ public class Carro {
 
     private String modelo, cor, placa;
     private int ano;
+    private boolean ligado;
 
     public String getModelo() {
         return modelo;
@@ -48,12 +49,24 @@ public class Carro {
         return quilometragem;
     }
 
-    public void ligarCarro() {
-        // TODO Integrar com motor e outros componentes
+    public void ligarCarro(Motor motor, Painel painel, SistemaDeDirecao direcao, SistemadeTransmissao transmissao,
+            SistemaEletrico eletrico, SistemaDeCombustivel combustivel) {
+        eletrico.ativarParteEletrica();
+        motor.ligarMotor(eletrico, combustivel);
+        painel.ligarDisplay(eletrico);
+        direcao.LiberarDirecao(motor);
+        if (motor.isEstado() && painel.isEstado() && direcao.getEstado() && transmissao.verificarEstado()) {
+            ligado = true;
+        }
     }
 
-    public void desligarCarro() {
-        // TODO Integrar com motor e outros componentes
+    public void desligarCarro(Motor motor, Painel painel, SistemaDeDirecao direcao, SistemadeTransmissao transmissao,
+            SistemaEletrico eletrico, SistemaDeCombustivel combustivel) {
+        ligado = false;
+        eletrico.ativarParteEletrica();
+        motor.desligarMotor();
+        painel.desligarDisplay();
+        direcao.TrancarDirecao(motor);
     }
 
     public void atualizarQuilometragem(double novaQuilometragem) {
@@ -63,10 +76,12 @@ public class Carro {
     public static void main(String[] args) {
         // Criar instâncias das classes envolvidas
         Carro carro = new Carro();
-        Motor motor = new Motor();
-        Transmissao transmissao = new Transmissao();
-        SistemaEletrico sistemaEletrico = new SistemaEletrico();
+        Motor motor = new Motor("Combustão", 200, 1.4, "Volksvagem", true);
+        SistemadeTransmissao transmissao = new SistemadeTransmissao("Manual", 6, "Eixo", "MItsubishi", true);
+        SistemaEletrico sistemaEletrico = new SistemaEletrico(12.0, 1.75, "convencional de chumbo-ácido", true, "Moura");
         Painel painel = new Painel("Eletronico", "ligado", "Toshiba", false, false);
+        Suspensao suspensao = new Suspensao("Mola", "Ferro", "Esparco", "
+        ", 0, false)
 
         // Realizar as ações de ligar o motor, ativar a transmissão e o sistema elétrico
         motor.ligarMotor();

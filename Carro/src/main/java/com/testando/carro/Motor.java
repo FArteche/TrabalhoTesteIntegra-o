@@ -32,8 +32,8 @@ public class Motor {
                         + "\nmarca: " + marca);
     }
 
-    public void ligarMotor(SistemaEletrico eletrico) {
-        if (eletrico.isEstado()) {
+    public void ligarMotor(SistemaEletrico eletrico, SistemaDeCombustivel combustivel) {
+        if (eletrico.isEstado() && combustivel.getNivelDeCombustivel() > 0) {
             estado = true;
         } else {
             estado = false;
@@ -41,7 +41,6 @@ public class Motor {
     }
 
     public void desligarMotor() {
-        System.out.println("Motor desligado");
         estado = false;
     }
 

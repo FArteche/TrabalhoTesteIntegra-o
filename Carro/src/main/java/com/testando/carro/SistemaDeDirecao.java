@@ -38,6 +38,12 @@ public class SistemaDeDirecao {
         }
     }
 
+    public void TrancarDirecao(Motor motor) {
+        if (!motor.verificarEstado()) {
+            estado = false;
+        }
+    }
+
     public void LigarSeta(Luzes luz, SistemaEletrico eletrico) {
         if (seta == 1 || seta == 2) {
             luz.Ligar(eletrico);
