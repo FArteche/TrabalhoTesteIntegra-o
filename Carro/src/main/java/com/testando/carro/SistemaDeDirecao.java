@@ -9,12 +9,21 @@ public class SistemaDeDirecao {
     private String marca;
     private int seta = 0; // 0 neutro, 1 esquerda, 2 direita
 
-    public SistemaDeDirecao(String tipo, boolean assistido, String material, double relacao, String marca) {
+    public SistemaDeDirecao(String tipo, boolean assistido, String material, double relacao, String marca, boolean estado) {
         this.tipo = tipo;
         this.assistido = assistido;
         this.material = material;
         this.relacao = relacao;
         this.marca = marca;
+        this.estado = estado;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public int getSeta() {
+        return seta;
     }
 
     public void AjustarDirecao(double angulo) {

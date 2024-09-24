@@ -21,7 +21,7 @@ public class Bancos {
 
     public void ajustarEncosto(String posicao, Painel painel) {
         this.estado = posicao;
-        painel.atualizarInformações("Posicao do banco ajustada para ");
+        painel.atualizarInformações("Posicao do banco ajustada para "+estado);
     }
 
     public void ajustarAltura(double novaAltura, Painel painel) {

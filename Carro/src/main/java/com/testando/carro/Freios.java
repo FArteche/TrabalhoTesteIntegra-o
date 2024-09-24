@@ -14,7 +14,7 @@ public class Freios {
     }
 
     public void frear(Luzes luz, SistemaEletrico eletrico){
-        nivelDeDesgaste += 0.01;
+        nivelDeDesgaste += 0.1;
         luz.Ligar(eletrico);
     }
 

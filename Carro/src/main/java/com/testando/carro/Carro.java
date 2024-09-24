@@ -15,6 +15,10 @@ public class Carro {
         return modelo;
     }
 
+    public boolean isLigado() {
+        return ligado;
+    }
+
     public void setModelo(String modelo) {
         this.modelo = modelo;
     }
@@ -80,12 +84,11 @@ public class Carro {
         SistemadeTransmissao transmissao = new SistemadeTransmissao("Manual", 6, "Eixo", "MItsubishi", true);
         SistemaEletrico sistemaEletrico = new SistemaEletrico(12.0, 1.75, "convencional de chumbo-ácido", true, "Moura");
         Painel painel = new Painel("Eletronico", "ligado", "Toshiba", false, false);
-        Suspensao suspensao = new Suspensao("Mola", "Ferro", "Esparco", "
-        ", 0, false)
+        Suspensao suspensao = new Suspensao("Mola", "Ferro", "Esparco", 0, 0, false);
 
         // Realizar as ações de ligar o motor, ativar a transmissão e o sistema elétrico
-        motor.ligarMotor();
-        transmissao.aumentarMarcha();
+        //motor.ligarMotor();
+        //transmissao.aumentarMarcha();
         sistemaEletrico.ativarParteEletrica();
 
         // Exibir o status no painel

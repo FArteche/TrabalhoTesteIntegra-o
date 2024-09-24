@@ -39,7 +39,7 @@ public class Luzes {
         }
     }
 
-    // 0 = luz de posição. 1 = luz baixa, 2 = luz alta
+    // int diferente de 1 e 2 = luz de posição. 1 = luz baixa, 2 = luz alta
     public void AjustarIntensidade(int novaIntensidade, Painel painel) {
         this.intensidade = novaIntensidade;
         if (intensidade == 1) {

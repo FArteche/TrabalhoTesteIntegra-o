@@ -11,6 +11,7 @@ package com.testando.carro;
  * @author IFSul
  */
 public class Pneus {
+
     private String tamanho, tipo, marca, estado;
     private double pressao, desgaste;
     private boolean removido;
@@ -25,10 +26,10 @@ public class Pneus {
     }
 
     public void desgastePneu(Suspensao suspensao) {
-        if (suspensao.getRigidez() <= 1500) {
-            desgaste += 1.5;
-        } else if (suspensao.getRigidez() <= 500) {
+        if (suspensao.getRigidez() <= 500) {
             suspensao.setEstado(false);
+        }if (suspensao.getRigidez() <= 1500) {
+            desgaste += 1.5;
         } else {
             desgaste += 4.0;
         }
@@ -42,11 +43,11 @@ public class Pneus {
         pressao = novaPressao;
     }
 
-    public void substituirPneu(String tamanho, String tipo, String marca, String estado, double pressao) {
+    public void substituirPneu(String tamanho, String tipo, String marca, double pressao) {
         this.tamanho = tamanho;
         this.tipo = tipo;
         this.marca = marca;
-        this.estado = estado;
+        this.estado = "Bom";
         this.pressao = pressao;
     }
 
