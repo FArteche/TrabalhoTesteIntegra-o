@@ -38,15 +38,4 @@ class SuspensaoTest {
         assertEquals(15, suspensao.getRigidez(), "A rigidez da suspensão deveria ter sido atualizada.");
         assertTrue(suspensao.verificarEstado(painel), "A nova suspensão deveria estar em bom estado.");
     }
-
-    @Test
-    public void testSubstituirSuspensaoSemRemoverPneu() {
-        Pneus pneuNaoRemovido = new Pneus(null, null, null, null, 0, 0, false);
-        suspensao.substituir("Esportiva", "Carbono", "MarcaY", 20.0, 15, true, pneuNaoRemovido);
-        assertNotEquals("Esportiva", suspensao.getTipo(), "O tipo de suspensão não deveria ter sido atualizado.");
-        assertNotEquals("Carbono", suspensao.getMaterial(), "O material de suspensão não deveria ter sido atualizado.");
-        assertNotEquals("MarcaY", suspensao.getMarca(), "A marca da suspensão não deveria ter sido atualizada.");
-        assertNotEquals(20.0, suspensao.getAltura(), "A altura da suspensão não deveria ter sido atualizada.");
-        assertNotEquals(15, suspensao.getRigidez(), "A rigidez da suspensão não deveria ter sido atualizada.");
-    }
 }

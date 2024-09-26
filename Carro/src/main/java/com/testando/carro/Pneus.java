@@ -16,19 +16,22 @@ public class Pneus {
     private double pressao, desgaste;
     private boolean removido;
 
-    public Pneus(String tamanho, String tipo, String marca, String estado, double pressao, double desgaste) {
+    public Pneus(String tamanho, String tipo, String marca, String estado, double pressao, double desgaste,
+            boolean removido) {
         this.tamanho = tamanho;
         this.tipo = tipo;
         this.marca = marca;
         this.estado = estado;
         this.pressao = pressao;
         this.desgaste = desgaste;
+        this.removido = removido;
     }
 
     public void desgastePneu(Suspensao suspensao) {
         if (suspensao.getRigidez() <= 500) {
             suspensao.setEstado(false);
-        }if (suspensao.getRigidez() <= 1500) {
+        }
+        if (suspensao.getRigidez() <= 1500) {
             desgaste += 1.5;
         } else {
             desgaste += 4.0;

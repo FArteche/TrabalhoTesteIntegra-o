@@ -14,7 +14,7 @@ class SistemaDeDirecaoTest {
 
     @BeforeEach
     public void setUp() {
-        direcao = new SistemaDeDirecao("Hidráulica", false, "Aço", 14.0, "MarcaX");
+        direcao = new SistemaDeDirecao("Hidráulica", false, "Aço", 14.0, "MarcaX", true);
         motor = new Motor(null, 0, 0, null, false); // Simulando que o motor está ligado
         luz = new Luzes(null, 0, null, true, null); // Supondo que Luzes tenha um construtor padrão
         sistemaEletrico = new SistemaEletrico(14.0, 100.0, "Íon de Lítio", true, "MarcaX");

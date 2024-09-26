@@ -4,12 +4,13 @@
  */
 package com.testando.carro;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  *
@@ -19,26 +20,26 @@ public class PneusTest {
     Pneus pneu;
     Painel painel;
     Suspensao suspensao1, suspensao2;
-    
+
     public PneusTest() {
-        pneu = new Pneus("21", "Comum", "Goodyear", "Bom", 23, 4);
+        pneu = new Pneus("21", "Comum", "Goodyear", "Bom", 23, 4, false);
         painel = new Painel("Digital", "", "Mercedes", true, true);
-        suspensao1 = new Suspensao("Eixo Rigido", "Aço", "ACDELCO", 15, 1600, true);               
-        suspensao2 = new Suspensao("Eixo Rigido", "Aço", "ACDELCO", 15, 800, true);               
+        suspensao1 = new Suspensao("Eixo Rigido", "Aço", "ACDELCO", 15, 1600, true);
+        suspensao2 = new Suspensao("Eixo Rigido", "Aço", "ACDELCO", 15, 800, true);
     }
-    
+
     @BeforeAll
     public static void setUpClass() {
     }
-    
+
     @AfterAll
     public static void tearDownClass() {
     }
-    
+
     @BeforeEach
     public void setUp() {
     }
-    
+
     @AfterEach
     public void tearDown() {
     }
@@ -48,13 +49,13 @@ public class PneusTest {
      */
     @Test
     public void testDesgastePneu() {
-        double desgasteResult [] = {0,0};
-        double desgasteExpectedResult [] = {8,9.5};
+        double desgasteResult[] = { 0, 0 };
+        double desgasteExpectedResult[] = { 8, 9.5 };
         pneu.desgastePneu(suspensao1);
         desgasteResult[0] = pneu.getDesgaste();
         pneu.desgastePneu(suspensao2);
         desgasteResult[1] = pneu.getDesgaste();
-        
+
         assertArrayEquals(desgasteExpectedResult, desgasteResult);
     }
 
