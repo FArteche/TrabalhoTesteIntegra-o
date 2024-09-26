@@ -64,7 +64,11 @@ public class CarroTest {
      */
     @Test
     public void testDesligarCarro() {
+        eletrico.ativarParteEletrica();
         carro.desligarCarro(motor, painel, direcao, transmissao, eletrico, combustivel);
-        assertFalse(carro.isLigado());
+        boolean result[]={carro.isLigado(),motor.verificarEstado(), painel.isEstado(),
+        direcao.isEstado(), eletrico.isEstado()};
+        boolean expectedResult [] = {false,false,false,false,false};
+        assertArrayEquals(expectedResult, result);
     }    
 }

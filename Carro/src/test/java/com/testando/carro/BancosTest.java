@@ -57,8 +57,8 @@ public class BancosTest {
     @Test
     public void testAjustarAltura() {
         System.out.println("Altura inicial: "+bancos.getAltura());
-        bancos.ajustarAltura(2.0, painel);
+        bancos.ajustarAltura(-1, painel);
         System.out.println(painel.getDisplay());
-        assertEquals("Altura do banco ajustada para 2.0", painel.getDisplay());
+        assertEquals("Altura do banco ajustada para 0.0", painel.getDisplay());
     }
 }

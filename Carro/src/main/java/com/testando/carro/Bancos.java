@@ -25,6 +25,9 @@ public class Bancos {
     }
 
     public void ajustarAltura(double novaAltura, Painel painel) {
+        if (novaAltura < 0 ) {
+            novaAltura = 0;
+        }
         this.altura = novaAltura;
         painel.atualizarInformações("Altura do banco ajustada para "+novaAltura);
     }
