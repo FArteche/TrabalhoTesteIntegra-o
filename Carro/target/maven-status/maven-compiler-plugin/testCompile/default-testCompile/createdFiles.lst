@@ -1,7 +1,7 @@
 com\testando\carro\FreiosTest.class
+com\testando\carro\BancosTest.class
 com\testando\carro\CarroTest.class
 com\testando\carro\LuzesTest.class
-com\testando\carro\BancosTest.class
 com\testando\carro\PneusTest.class
 com\testando\carro\PainelTest.class
 com\testando\carro\MotorTest.class

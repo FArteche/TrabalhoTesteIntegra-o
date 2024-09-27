@@ -65,6 +65,7 @@ public class CarroTest {
     @Test
     public void testDesligarCarro() {
         eletrico.ativarParteEletrica();
+        System.out.println(eletrico.isEstado());
         carro.desligarCarro(motor, painel, direcao, transmissao, eletrico, combustivel);
         boolean result[]={carro.isLigado(),motor.verificarEstado(), painel.isEstado(),
         direcao.isEstado(), eletrico.isEstado()};

@@ -29,9 +29,9 @@ public class Pneus {
 
     public void desgastePneu(Suspensao suspensao) {
         if (suspensao.getRigidez() <= 500) {
-            suspensao.setEstado(false);
+            desgaste += 5.0;
         }
-        if (suspensao.getRigidez() <= 1500) {
+        else if (suspensao.getRigidez() <= 1500) {
             desgaste += 1.5;
         } else {
             desgaste += 4.0;

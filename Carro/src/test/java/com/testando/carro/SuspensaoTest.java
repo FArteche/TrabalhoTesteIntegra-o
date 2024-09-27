@@ -31,11 +31,11 @@ class SuspensaoTest {
     @Test
     public void testSubstituirSuspensaoComPneuRemovido() {
         suspensao.substituir("Esportiva", "Carbono", "MarcaY", 20.0, 15, true, pneu);
-        assertEquals("Esportiva", suspensao.getTipo(), "O tipo de suspensão deveria ter sido atualizado.");
-        assertEquals("Carbono", suspensao.getMaterial(), "O material de suspensão deveria ter sido atualizado.");
-        assertEquals("MarcaY", suspensao.getMarca(), "A marca da suspensão deveria ter sido atualizada.");
-        assertEquals(20.0, suspensao.getAltura(), "A altura da suspensão deveria ter sido atualizada.");
-        assertEquals(15, suspensao.getRigidez(), "A rigidez da suspensão deveria ter sido atualizada.");
-        assertTrue(suspensao.verificarEstado(painel), "A nova suspensão deveria estar em bom estado.");
+        assertEquals("Esportiva", suspensao.getTipo());
+        assertEquals("Carbono", suspensao.getMaterial());
+        assertEquals("MarcaY", suspensao.getMarca());
+        assertEquals(20.0, suspensao.getAltura());
+        assertEquals(15, suspensao.getRigidez());
+        assertTrue(suspensao.verificarEstado(painel));
     }
 }

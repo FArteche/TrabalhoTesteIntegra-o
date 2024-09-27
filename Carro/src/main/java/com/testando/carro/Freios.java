@@ -21,6 +21,8 @@ public class Freios {
     public void avisoDesgaste(Painel painel){
         if(nivelDeDesgaste >= 10.00){
             painel.atualizarInformações("Freios desgastados, realize a manutenção");
+        }else{
+            painel.atualizarInformações("Freios normal");
         }
     }
 

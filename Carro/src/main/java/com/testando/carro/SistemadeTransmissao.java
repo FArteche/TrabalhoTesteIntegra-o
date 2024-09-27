@@ -5,7 +5,15 @@ package com.testando.carro;
 //trocarMarcha (Agora mostra a marcha atual no display)
 public class SistemadeTransmissao {
     private String tipo;
-    private int numeroDeMarchas;
+    private int numeroDeMarchas, marchaAtual = 0;
+
+    public int getMarchaAtual() {
+        return marchaAtual;
+    }
+
+    public void setMarchaAtual(int marchaAtual) {
+        this.marchaAtual = marchaAtual;
+    }
     private String material;
     private String marca;
     private boolean estado;
@@ -18,26 +26,30 @@ public class SistemadeTransmissao {
         this.estado = estado;
     }
 
-    public void trocarRe(int marcha, Luzes luz, SistemaEletrico eletrico) {
-        marcha = -1;
-        luz.Ligar(eletrico);
+    public void trocarRe(Luzes luz, SistemaEletrico eletrico, Painel painel) {
+        marchaAtual = -1;
+        painel.atualizarInformações("Marcha Re");
+        luz.Ligar(eletrico); 
     }
 
-    public void aumentarMarcha(int marcha, Painel painel) {
-        if (marcha < numeroDeMarchas) {
-            marcha++;
-            painel.atualizarInformações("Marcha " + marcha);
+    public void aumentarMarcha(Painel painel) {
+        if(marchaAtual == -1){
+            marchaAtual = 1;
+        }
+        else if (marchaAtual < numeroDeMarchas) {
+            marchaAtual++;
+            painel.atualizarInformações("Marcha " + marchaAtual);
         } else {
             painel.atualizarInformações("Não é possível aumentar mais!");
         }
     }
-
-    public void diminuirMarcha(int marcha, Painel painel) {
-        if (marcha > 0) {
-            marcha--;
-            painel.atualizarInformações("Marcha " + marcha);
+    
+    public void reduzirMarcha(Painel painel) {
+        if (marchaAtual > 0) {
+            marchaAtual--;
+            painel.atualizarInformações("Marcha " + marchaAtual);
         } else {
-            painel.atualizarInformações("Não é possível diminuir mais!");
+            painel.atualizarInformações("Não é possível reduzir mais!");
         }
     }
 

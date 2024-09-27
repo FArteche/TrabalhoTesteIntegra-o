@@ -45,14 +45,19 @@ public class SistemaEletrico {
         if (voltagem >= 13 && voltagem <= 15 && estado) {
             painel.atualizarInformações("Sistema elétrico funcional");
             return true;
+        }else{
+            return false;
         }
-        return false;
     }
 
     public void ativarParteEletrica() {
         if (!estado) {
             estado = true;
-        } else {
+        }
+    }
+
+    public void desativarParteEletrica() {
+        if (estado = true) {
             estado = false;
         }
     }

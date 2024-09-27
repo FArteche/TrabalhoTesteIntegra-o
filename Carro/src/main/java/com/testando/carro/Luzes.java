@@ -50,6 +50,10 @@ public class Luzes {
             painel.atualizarInformações("Luz de posição ligada");
         }
     }
+    
+    public void LuzDeRe(){
+        
+    }
 
     public String getTipo() {
         return tipo;
