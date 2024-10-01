@@ -46,7 +46,7 @@ public class FreiosTest {
     }
 
     /**
-     * Test of frear method, of class Freios.
+     * Verifica se o desgaste do freio está sendo aplicado corretamente e se as luzes de freio estão acendendo corretamente
      */
     @Test
     public void testFrear() {
@@ -59,7 +59,8 @@ public class FreiosTest {
     }
 
     /**
-     * Test of avisoDesgaste method, of class Freios.
+     * Verifica se o aviso de desgaste dos freio está sendo disparado corretamente
+     * Após cada freada o desgaste do freio é verificado, quando ele chegar ou passar de 10 o aviso deve ser disparado via painel
      */
     @Test
     public void testAvisoDesgaste() {

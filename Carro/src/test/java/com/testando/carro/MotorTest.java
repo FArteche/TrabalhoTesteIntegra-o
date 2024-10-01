@@ -47,7 +47,7 @@ public class MotorTest {
     }
 
     /**
-     * Test of mostrarEspecificações method, of class Motor.
+     * A lista de especificações do motor são mostradas no painel
      */
     @Test
     public void testMostrarEspecificações() {
@@ -64,7 +64,7 @@ public class MotorTest {
     }
 
     /**
-     * Test of ligarMotor method, of class Motor.
+     * Se o sistema elétrico estivar funcionando e houver combustível no tanque de gasolina, o motor irá ligar
      */
     @Test
     public void testLigarMotor() {

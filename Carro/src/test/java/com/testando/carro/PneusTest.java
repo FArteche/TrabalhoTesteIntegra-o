@@ -45,7 +45,8 @@ public class PneusTest {
     }
 
     /**
-     * Test of desgastePneu method, of class Pneus.
+     * Testa o desgaste do pneu de acordo com a situação de suspensão
+     * São usadas duas suspensões diferentes para verificar se o desgaste é alterado
      */
     @Test
     public void testDesgastePneu() {
@@ -60,7 +61,7 @@ public class PneusTest {
     }
 
     /**
-     * Test of verificarPressao method, of class Pneus.
+     * verifica se o painel informa a pressão atual corretamente
      */
     @Test
     public void testVerificarPressao() {

@@ -43,7 +43,7 @@ public class LuzesTest {
     }
 
     /**
-     * Test of Ligar method, of class Luzes.
+     * Verifica o sistema elétrico, se ele estiver funcionando o sistema eletrico irá ligar
      */
     @Test
     public void testLigar() {
@@ -51,7 +51,9 @@ public class LuzesTest {
         assertFalse(luzes.isEstado());
     }
 
-    
+    /**
+     *Ajusta a intensidade para uma sequencia de valores, e é esperado uma sequencia específica de mensagens no painel
+     **/
     @Test
     public void testAjustarIntensidade() {
         eletrico.ativarParteEletrica();

@@ -51,7 +51,7 @@ public class CarroTest {
     }
 
     /**
-     * Test of ligarCarro method, of class Carro.
+     * ligarCarro ativa a parte Eletrica, Liga o motor, Liga o Display e Libera a direção / Se todos os parâmetros forem verdadeiros o carro irá ligar
      */
     @Test
     public void testLigarCarro() {
@@ -60,7 +60,7 @@ public class CarroTest {
     }
 
     /**
-     * Test of desligarCarro method, of class Carro.
+     * desligarCarro desativa todos os componentes / Se todos os componentes forem falsos o carro terá desligado com sucesso
      */
     @Test
     public void testDesligarCarro() {

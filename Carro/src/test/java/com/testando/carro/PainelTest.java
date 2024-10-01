@@ -48,7 +48,9 @@ public class PainelTest {
     public void tearDown() {
     }
 
-    
+    /** 
+     * Se o sistema elétrico estiver funcionando, o painel irá ligar 
+     **/
     @Test
     public void testLigarDisplay() {
         painel.ligarDisplay(eletrico);
@@ -57,7 +59,7 @@ public class PainelTest {
 
 
     /**
-     * Test of setControle method, of class Painel.
+     * Verifica se todos os componentes principais estão funcionando corretamente
      */
     @Test
     public void testSetControle() {

@@ -41,7 +41,8 @@ public class BancosTest {
     }
 
     /**
-     * Test of ajustarEncosto method, of class Bancos.
+     * Ajusta a posição do banco para "Reto" / Resultado não pode ser "Deitado"
+     * Verificação realizada através da visualização da mensagem do painel
      */
     @Test
     public void testAjustarEncosto() {
@@ -52,7 +53,8 @@ public class BancosTest {
     }
 
     /**
-     * Test of ajustarAltura method, of class Bancos.
+     * Ajusta a altura do banco para -1 / Resultado deve ser 0, já que qualquer valor menor que 0 deve ser ajustado para 0
+     * Verificação realizada através da visualização da mensagem do painel
      */
     @Test
     public void testAjustarAltura() {
